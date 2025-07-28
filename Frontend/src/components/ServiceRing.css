@@ -1,0 +1,72 @@
+.service-ring-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #0d0d0d;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.ring {
+    position: relative;
+    width: 600px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+.card {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 1s ease, opacity 0.3s;
+    opacity: 0.3;
+    backface-visibility: hidden;
+}
+
+.card.active {
+    transform: scale(1.1) translateZ(350px);
+    opacity: 1;
+    z-index: 2;
+    background: #272727;
+}
+
+.circle-content {
+    text-align: center;
+}
+
+.icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.controls {
+    margin-top: 2rem;
+}
+
+.controls button {
+    background: #222;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.controls button:hover {
+    background: #444;
+}
